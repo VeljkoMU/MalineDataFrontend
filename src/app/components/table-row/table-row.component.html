@@ -1,0 +1,20 @@
+    <td class=".d">{{data.date}}</td>
+    <td>{{data.o.toFixed(2)}}</td>
+    <td>{{data.k.toFixed(2)}}</td>
+    <td>{{data.ko.toFixed(2)}}</td>
+    <td>{{data.cenaO}}</td>
+    <td>{{data.cenaKo}}</td>
+    <td>{{data.cenaK}}</td>
+    <td>{{data.profitO.toFixed(2)}}</td>
+    <td>{{data.profitK.toFixed(2)}}</td>
+    <td>{{data.profitKo.toFixed(2)}}</td>
+    <td>{{(data.profitO + data.profitKo + data.profitK).toFixed(2)}}</td>
+    <td *ngIf="isFullView">{{data.isplaceno.toFixed(2)}}</td>
+    <td *ngIf="isFullView">{{(data.profitO + data.profitKo + data.profitK - data.isplaceno).toFixed(2)}}</td>
+    <td *ngIf="v">{{data.gajbeOutZ}}</td>
+    <td *ngIf="isFullView">{{data.gajbeInZ}}</td>
+    <td *ngIf="v">{{data.gajbeOutC}}</td>
+    <td *ngIf="isFullView">{{data.gajbeInC}}</td>
+    <td *ngIf="v">{{data.gajbeOutP}}</td>
+    <td *ngIf="isFullView">{{data.gajbeInP}}</td>
+    <td *ngIf="canDelete" ngxNoPrint><button (click)="delete()" class="button-red">X</button></td>

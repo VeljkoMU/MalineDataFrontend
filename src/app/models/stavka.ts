@@ -1,0 +1,21 @@
+export interface stavka{
+    id: number,
+    date: string,
+    o: number,
+    k: number,
+    ko: number,
+    cenaO: number,
+    cenaK: number,
+    cenaKo: number,
+    gajbeInZ: number,
+    gajbeOutZ: number,
+    gajbeInP: number,
+    gajbeOutP: number,
+    gajbeInC: number,
+    gajbeOutC: number,
+    profitO:number,
+    profitK:number,
+    profitKo:number,
+    profitU:number,
+    isplaceno: number
+};

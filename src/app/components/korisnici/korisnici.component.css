@@ -1,0 +1,22 @@
+ng-select{
+    border: 1px solid black;
+    font-size: large;
+    padding: 5px 10px 5px 10px;
+    margin-bottom: 50px;
+    width: 300px;
+}
+
+.ng-option{
+    border:1px solid black;
+    border-collapse: collapse;
+}
+
+
+.printer{
+    width: 27px;
+    height: 27px;
+    background-image: url("../../../assets/printer.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}

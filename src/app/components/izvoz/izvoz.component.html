@@ -1,0 +1,73 @@
+<div class="menu">
+    <div>
+        <button class="navigation" (click)="uiService.gotoMain()">Generalno</button>
+    </div>
+    <div>
+        <button class="navigation" (click)="uiService.gotoGeneral()">Uvoz</button>
+    </div>
+    <div>
+        <button class="navigation" (click)="uiService.gotoKorisnik()">Profili korisnika</button>
+    </div>
+    <div>
+        <button class="navigation" (click)="uiService.gotoDodaj()">Dodaj novog korisnika</button>
+    </div>
+    <div>
+        <button class="navigation" (click)="uiService.gotoIzvoz()">Izvoz</button>
+    </div>
+</div>
+
+<div class="main" ngxPrintItem id="print">
+    <button (click)="stampaj()" class="printer button" ngxNoPrint></button>
+
+    <table>
+        <tr>
+            <th>Datum</th>
+            <th>Organske (kg)</th>
+            <th>Kontrolisane (kg)</th>
+            <th>Komercijalne (kg)</th>
+            <th>Cena Organske</th>
+            <th>Cena Kontrolisane</th>
+            <th>Cena Komercijalne</th>
+            <th>Zarada Organske</th>
+            <th>Zarada Kontrolisane</th>
+            <th>Zarada Komercijalne</th>
+            <th>Zarada Ukupno</th>
+            <th>Gajbe Zelene</th>
+            <th>Gajbe Crvene</th>
+            <th>Gajbe Plave</th>
+        </tr>
+        <tr app-table-row *ngFor="let tr of stavke" [data]="tr" [canDelete]="true" [isFullView]="false" (deleteSingal)="deleteIzvoz($event)"></tr>
+    </table>
+    <div class="form" ngxNoPrint>
+        <div>
+            <label>Datum: </label>
+            <input type="date" [(ngModel)]="this.stavka.date">
+        </div>
+        <div>
+            <label>Organske (kg): </label>
+            <input type="number" [(ngModel)]="this.stavka.o">
+        </div>
+        <div>
+            <label>Komercijalne (kg): </label>
+            <input type="number" [(ngModel)]="this.stavka.ko">
+        </div>
+        <div>
+            <label>Kontrolisane (kg): </label>
+            <input type="number" [(ngModel)]="this.stavka.k">
+        </div>
+        <div>
+            <label>Gajbe Crvene: </label>
+            <input type="number" [(ngModel)]="this.stavka.gajbeOutC">
+        </div>
+        <div>
+            <label>Gajbe Plave: </label>
+            <input type="number" [(ngModel)]="this.stavka.gajbeOutP">
+        </div>
+        <div>
+            <label>Gajbe Zelene: </label>
+            <input type="number" [(ngModel)]="this.stavka.gajbeOutZ">
+        </div>
+        <button class="button" (click)="inputIzvoz()">UNESI</button>
+    </div>
+
+</div>

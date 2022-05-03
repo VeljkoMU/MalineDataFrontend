@@ -1,0 +1,130 @@
+<div class="menu">
+    <div>
+        <button class="navigation" (click)="uiService.gotoMain()">Generalno</button>
+    </div>
+    <div>
+        <button class="navigation" (click)="uiService.gotoGeneral()">Uvoz</button>
+    </div>
+    <div>
+        <button class="navigation" (click)="uiService.gotoKorisnik()">Profili korisnika</button>
+    </div>
+    <div>
+        <button class="navigation" (click)="uiService.gotoDodaj()">Dodaj novog korisnika</button>
+    </div>
+    <div>
+        <button class="navigation" (click)="uiService.gotoIzvoz()">Izvoz</button>
+    </div>
+</div>
+<div class="main">
+    <div class="cene">
+        <div class="info">AŽURIRAJ DANASNJE CENE</div>
+        <div class="info red" *ngIf="!azurne">CENE NISU AŽURIRANE, MOLIM VAS AŽURIRAJTE</div>
+        <div class="info green" *ngIf="azurne">CENE SU AŽURNE</div>
+        <div class="">
+            <div>
+                <label>Cena organskih: </label>
+                <input type="number" [(ngModel)]="tresnje">
+            </div>
+            <div>
+                <label>Cena kontrolisane: </label>
+                <input type="number" [(ngModel)]="k">
+            </div>
+            <div>
+                <label>Cena komercijalne: </label>
+                <input type="number" [(ngModel)]="ko">
+            </div>
+            <button class="button" (click)="izmeniCenu()">AŽURIRAJ CENU</button>
+        </div>
+    </div>
+    <div class="gajbe">
+    <div>
+        <div class="info">Trenutno stanje gajbi</div>
+        <div>
+            Crvene: <br>
+            Dostupno: {{gajbeC}}
+            Iznajmljeno: {{gajbeCT}}
+        </div>
+        <div>
+            Plave:<br>
+            Dostupno: {{gajbeP}}
+            Iznajmljeno: {{gajbePT}}
+        </div>
+        <div>
+            Zelene:<br>
+            Dostupno: {{gajbeZ}}
+            Iznajmljeno: {{gajbeZT}}
+        </div>
+    </div>
+    <div>
+        <div class="info">AŽURIRANJE STANJA GAJBI</div>
+        <div>
+            <label>Novi broj dostupnih gajbi Zelene:</label>
+            <input type="number" [(ngModel)]="gajbeZ">
+        </div>
+        <div>
+            <label>Novi broj dostupnih gajbi Crvene:</label>
+            <input type="number" [(ngModel)]="gajbeC">
+        </div>
+        <div>
+            <label>Novi broj dostupnih gajbi Plave:</label>
+            <input type="number" [(ngModel)]="gajbeP">
+        </div>
+        <button class="button" (click)="izmeniGajbe()">IZMENI DOSTUPNE GAJBE</button> (Ova promean će uticati na sistem)
+    </div>
+</div>
+<div class="stanja">
+    <div>
+        <div class="info">Ukupno uvezeno stanje</div>
+        <table>
+            <tr>
+                <th>Ukupno</th>
+                <th>Organske</th>
+                <th>Kontrolisane</th>
+                <th>Komercijalne</th>
+            </tr>
+            <tr>
+                <td>{{(uvozo + uvozk + uvozko).toFixed(2)}}</td>
+                <td>{{uvozo.toFixed(2)}}</td>
+                <td>{{uvozk.toFixed(2)}}</td>
+                <td>{{uvozko.toFixed(2)}}</td>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <div class="info">Ukupno trernutno stanje</div>
+        <table>
+            <tr>
+                <th>Ukupno</th>
+                <th>Organske</th>
+                <th>Kontrolisane</th>
+                <th>Komercijalne</th>
+            </tr>
+            <tr>
+                <td>{{((uvozo + uvozk + uvozko) - (izvozo + izvozk + izvozko)).toFixed(2)}}</td>
+                <td>{{(uvozo - izvozo).toFixed(2)}}</td>
+                <td>{{(uvozk - izvozk).toFixed(2)}}</td>
+                <td>{{(uvozko - izvozko).toFixed(2)}}</td>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <div class="info">Ukupno izvezeno stanje</div>
+        <table>
+            <tr>
+                <th>Ukupno</th>
+                <th>Organske</th>
+                <th>Kontrolisane</th>
+                <th>Komercijalne</th>
+            </tr>
+            <tr>
+                <td>{{(izvozo + izvozk + izvozko).toFixed(2)}}</td>
+                <td>{{izvozo.toFixed(2)}}</td>
+                <td>{{izvozk.toFixed(2)}}</td>
+                <td>{{izvozko.toFixed(2)}}</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+</div>
+

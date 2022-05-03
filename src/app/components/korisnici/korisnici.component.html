@@ -1,0 +1,134 @@
+<div class="menu">
+    <div>
+        <button class="navigation" (click)="uiService.gotoMain()">Generalno</button>
+    </div>
+    <div>
+        <button class="navigation" (click)="uiService.gotoGeneral()">Uvoz</button>
+    </div>
+    <div>
+        <button class="navigation" (click)="uiService.gotoKorisnik()">Profili korisnika</button>
+    </div>
+    <div>
+        <button class="navigation" (click)="uiService.gotoDodaj()">Dodaj novog korisnika</button>
+    </div>
+    <div>
+        <button class="navigation" (click)="uiService.gotoIzvoz()">Izvoz</button>
+    </div>
+</div>
+
+<div class="main">
+        <div *ngIf="korisnici.length!=0">
+            <label>Izabrite korisnika:</label>
+            <ng-select (change)="select()"
+            [items]="korisnici" bindLabel="ime" [(ngModel)]="selected"
+            ></ng-select>
+        </div>
+        <div class="main" *ngIf="selected!=undefined" ngxPrintItem id="print">
+            <button (click)="stampaj()" class="printer button" ngxNoPrint></button>
+
+            <div>
+                Ime i prezine: {{selected?.ime}}
+            </div>
+            <div>
+                Mesto: {{selected?.mesto}}
+            </div>
+            <div>
+                JMBG: {{selected?.jmbg}}
+            </div>
+            <div>
+                Br. Gazdinstva: {{selected?.gaz}}
+            </div>
+            <div>
+                Žiro racun i banka: {{selected?.ziro}}
+            </div>
+            <div>
+                Dužan gajbi: {{selected?.gajbe}}
+            </div>
+            <div>
+                Ukupno zaradio: {{this.zarada}}
+            </div>
+            <div>
+                Ukupno isplaćeno: {{this.isplata}}
+            </div>
+            <div>
+                Preostalo za isplatu: {{this.razlika}}
+            </div>
+
+            <div>
+                <table>
+                    <tr>
+                        <th>Datum</th>
+                        <th>Organske (kg)</th>
+                        <th>Kontrolisane (kg)</th>
+                        <th>Komercijalne (kg)</th>
+                        <th>Cena Organske</th>
+                        <th>Cena Kontrolisane</th>
+                        <th>Cena Komercijalne</th>
+                        <th>Zarada Organske</th>
+                        <th>Zarada Kontrolisane</th>
+                        <th>Zarada Komercijalne</th>
+                        <th>Zarada Ukupno</th>
+                        <th>Isplata</th>
+                        <th>Ostatak</th>
+                        <th>Gajbe izanjmljene Zelene</th>
+                        <th>Gajbe vraćene Zelene</th>
+                        <th>Gajbe izanjmljene Crvene</th>
+                        <th>Gajbe vraćene Crvene</th>
+                        <th>Gajbe izanjmljene Plave</th>
+                        <th>Gajbe vraćene Plave</th>
+                    </tr>
+                    <tr *ngFor="let i of stavke" app-table-row [data]="i" [canDelete]="true" (click)="copyStavka(i)" (deleteSingal)="deleteStavka($event)"></tr>
+                </table>
+            </div>
+
+            <button ngxNoPrint class="button button-red" (click)="this.delete()">OBRIŠI KORISNIKA</button> (ova akcija će imati posledice na sistem)
+            <div class="form" ngxNoPrint>
+                <div class="info">UNESITE NOVU STAVKU</div>
+            <div>
+                <label>Datum: </label>
+                <input type="date" [(ngModel)]="this.stavka.date">
+            </div>
+            <div>
+                <label>Organske (kg): </label>
+                <input type="number" [(ngModel)]="this.stavka.o">
+            </div>
+            <div>
+                <label>Komercijalne (kg): </label>
+                <input type="number" [(ngModel)]="this.stavka.ko">
+            </div>
+            <div>
+                <label>Kontrolisane (kg): </label>
+                <input type="number" [(ngModel)]="this.stavka.k">
+            </div>
+            <div>
+                <label>Uzeto gajbi (Zelenih): </label>
+                <input type="number" [(ngModel)]="this.stavka.gajbeOutZ">
+            </div>
+            <div>
+                <label>Uzeto gajbi (Plavih): </label>
+                <input type="number" [(ngModel)]="this.stavka.gajbeOutP">
+            </div>
+            <div>
+                <label>Uzeto gajbi (Crvenih): </label>
+                <input type="number" [(ngModel)]="this.stavka.gajbeOutC">
+            </div>
+            <div>
+                <label>Vraćeno gajbi (Zelenih): </label>
+                <input type="number" [(ngModel)]="this.stavka.gajbeInZ">
+            </div>
+            <div>
+                <label>Vraćeno gajbi (Plavih): </label>
+                <input type="number" [(ngModel)]="this.stavka.gajbeInP">
+            </div>
+            <div>
+                <label>Vraćeno gajbi (Crvenih): </label>
+                <input type="number" [(ngModel)]="this.stavka.gajbeInC">
+            </div>
+            <div>
+                <label>Isplaćeno: </label>
+                <input type="number" [(ngModel)]="this.stavka.isplaceno">
+            </div>
+            <button class="button" (click)="insert()">UNESI</button>
+        </div>
+        </div>
+</div>

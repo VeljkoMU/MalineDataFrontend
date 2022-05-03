@@ -1,1 +1,156 @@
-/* You can add global styles to this file, and also import other style files */
+body{
+    width: 100%;
+    margin:auto;
+    padding:auto;
+}
+
+.main{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.info{
+    font-size: 15px;
+    font-weight: bolder;
+    border-bottom: 1px solid black;
+}
+
+.red{
+    border: 0;
+    color: red;
+}
+
+.green{
+    border: 0;
+    color: green;
+}
+
+
+.button{
+    border: 0;
+    padding: 15px 20px 15px 20px;
+    background-color: none;
+    border: 0;
+    font-size: larger;
+    transition: 1s ease-in-out;
+    background-color: rgb(224, 224, 224);
+}
+
+.button:hover{
+    background-color: rgb(148, 251, 251);
+}
+
+.button-red{
+    background-color: none;
+    border: 1px solid red;
+    color:red;
+    transition: 0.5s ease-in-out;
+}
+
+.button-red:hover{
+    color: black;
+    background-color: red;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    border: 1px solid black;
+    padding: 10px;
+    margin-top: 30px;
+}
+
+.form div{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+table{
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+th{
+    border: 1px solid black;
+    padding: 0;
+    margin:0;
+    background-color: rgb(186, 185, 185);
+    border-collapse: collapse;
+}
+
+tr{
+    border-bottom: 1px solid black;
+    border-collapse: collapse;
+}
+
+td{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.ng-option{
+    border:1px solid black;
+    border-collapse: collapse;
+    background-color: rgb(211, 205, 205);
+}
+
+.ng-option:hover{
+    background-color: rgb(79, 77, 77);
+    color: white;
+}
+
+ng-select:hover{
+    border: 1px solid blue;
+}
+
+.menu{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 40px;
+    width: 100%;
+    padding-bottom: 30px;
+    border-bottom: 1px solid black;
+    background-color: rgb(224, 224, 224);
+    height: 100px;
+}
+
+.menu div{
+    width: fit-content;
+}
+
+.navigation{
+    background-color: rgb(224, 224, 224);
+    border: none;
+    border-bottom: 1px solid black;
+    font-size: larger;
+    transition: 300ms ease-in-out;
+}
+
+.navigation:hover{
+    background-color: rgb(148, 251, 251);
+    box-shadow: 0 0 50px 30px rgb(148, 251, 251);
+}
+
+table{
+    text-align: center;
+    word-wrap:unset;
+}
+
+td{
+    width: fit-content;
+}
+
+.d{
+    width: 100px;
+}

@@ -1,0 +1,18 @@
+.gajbe{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    width: 100%; 
+    margin-bottom: 50px;
+}
+
+.stanja{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.cene{
+    margin-bottom: 40px;
+}

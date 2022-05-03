@@ -1,0 +1,8 @@
+.printer{
+    width: 27px;
+    height: 27px;
+    background-image: url("../../../assets/printer.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}

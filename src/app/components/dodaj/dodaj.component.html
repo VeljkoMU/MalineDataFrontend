@@ -1,0 +1,43 @@
+<div class="menu">
+    <div>
+        <button class="navigation" (click)="uiService.gotoMain()">Generalno</button>
+    </div>
+    <div>
+        <button class="navigation" (click)="uiService.gotoGeneral()">Uvoz</button>
+    </div>
+    <div>
+        <button class="navigation" (click)="uiService.gotoKorisnik()">Profili korisnika</button>
+    </div>
+    <div>
+        <button class="navigation" (click)="uiService.gotoDodaj()">Dodaj novog korisnika</button>
+    </div>
+    <div>
+        <button class="navigation" (click)="uiService.gotoIzvoz()">Izvoz</button>
+    </div>
+</div>
+
+<div class="main">
+    <div class="form">
+    <div>
+        <label>Ime i prezime:</label>
+        <input [(ngModel)]="korisnik.ime">
+    </div>
+    <div>
+        <label>JMBG:</label>
+        <input [(ngModel)]="korisnik.jmbg">
+    </div>
+    <div>
+        <label>Broj Gazdinstva:</label>
+        <input type="number" [(ngModel)]="korisnik.gaz">
+    </div>
+    <div>
+        <label>Mesto:</label>
+        <input [(ngModel)]="korisnik.mesto">
+    </div>
+    <div>
+        <label>Žiro racun i banka:</label>
+        <input [(ngModel)]="korisnik.ziro">
+    </div>
+    <button class="button" (click)="insert()">DODAJ</button>
+</div>
+</div>

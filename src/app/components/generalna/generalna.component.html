@@ -1,0 +1,41 @@
+<div class="menu">
+    <div>
+        <button class="navigation" (click)="uiService.gotoMain()">Generalno</button>
+    </div>
+    <div>
+        <button class="navigation" (click)="uiService.gotoGeneral()">Uvoz</button>
+    </div>
+    <div>
+        <button class="navigation" (click)="uiService.gotoKorisnik()">Profili korisnika</button>
+    </div>
+    <div>
+        <button class="navigation" (click)="uiService.gotoDodaj()">Dodaj novog korisnika</button>
+    </div>
+    <div>
+        <button class="navigation" (click)="uiService.gotoIzvoz()">Izvoz</button>
+    </div>
+</div>
+
+<div class="main">
+    <div class="table" id="print">
+        <button (click)="stampaj()" class="printer button"></button>
+        
+        <table ngxPrintItem id="print">
+            <tr>
+                <th>Datum</th>
+                <th>Organske (kg)</th>
+                <th>Kontrolisane (kg)</th>
+                <th>Komercijalne (kg)</th>
+                <th>Cena Organske</th>
+                <th>Cena Kontrolisane</th>
+                <th>Cena Komercijalne</th>
+                <th>Zarada Organske</th>
+                <th>Zarada Kontrolisane</th>
+                <th>Zarada Komercijalne</th>
+                <th>Zarada Ukupno</th>
+            </tr>
+            
+            <tr app-table-row *ngFor="let tr of stavke" [data]="tr" [canDelete]="false" [isFullView]="false" [v]="false"></tr>
+        </table>
+    </div>
+</div>
